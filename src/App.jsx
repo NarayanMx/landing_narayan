@@ -1,11 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import NavBar from "./components/NavBar/NavBar.jsx";
-import Header from "./components/Header/Header.jsx";
-import Main from "./components/Main/Main.jsx";
-import ExampleBox from "./components/ExampleBox/ExampleBox.jsx";
-import Footer from "./components/Footer/Footer.jsx";
+import NavBar from "./components/Layout/NavBar/NavBar.jsx";
+import Header from "./components/Portfolio/Header/Header.jsx";
+import Main from "./components/Portfolio/Main/Main.jsx";
+import ExampleBox from "./components/Portfolio/ExampleBox/ExampleBox.jsx";
+import Footer from "./components/Layout/Footer/Footer.jsx";
 
 function App() {
   return (

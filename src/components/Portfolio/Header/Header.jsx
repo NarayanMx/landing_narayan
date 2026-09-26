@@ -1,5 +1,5 @@
 import React from "react";
-import HeroPict from "../../assets/Hero/Hero_pict.jpg";
+import HeroPict from "../../../assets/Hero/Hero_pict.jpg";
 
 function Header() {
   return (
