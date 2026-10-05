@@ -33,16 +33,16 @@ function Header() {
         Programador Web <span className="text-orange-600 font-normal">|</span> Páginas que Aumentan tus Ventas
       </p>
 
-      {/* Copy de enganche directo para el cliente tatuador */}
-      <div className="max-w-2xl mx-auto space-y-4 pt-4 mt-2 z-10">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
+      {/* Copy de enganche directo (Contenedor con ancho 100% y centrado flex absoluto) */}
+      <div className="w-full max-w-2xl mx-auto space-y-4 pt-4 mt-2 z-10 flex flex-col items-center text-center">
+        <h2 className="w-full text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug text-center">
           Construyo páginas web que convierten a tus seguidores de Instagram en{" "}
           <span className="text-orange-500">citas reales</span>, para que tú solo te enfoques en{" "}
           <span className="text-amber-400">crear arte</span>.
         </h2>
 
-        <p className="text-neutral-400 text-xs sm:text-sm font-normal leading-relaxed max-w-xl mx-auto">
-          Diseño máquinas de venta web con cotizadores interactivos en tiempo real. Filtra curiosos, calcula el valor de cada pieza automáticamente y recibe prospectos calificados directo a tu WhatsApp.
+        <p className="w-full text-neutral-400 text-xs sm:text-sm font-normal leading-relaxed text-center pt-3">
+          Hola, me llamo Narayan y me dedico al desarrollo web 100% enfocado en artistas y profesionales independientes. Creo páginas rápidas, estéticas y estructuradas para mostrar tu trabajo con máxima calidad y convertir visitas en clientes.
         </p>
       </div>
     </header>
