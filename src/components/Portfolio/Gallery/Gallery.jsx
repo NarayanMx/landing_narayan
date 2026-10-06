@@ -12,15 +12,10 @@ function Gallery() {
         <div className="text-center space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-950/60 border border-orange-500/40 text-amber-400 text-xs font-bold uppercase tracking-widest">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Maquetas Comerciales Interactivas</span>
+            <span>Explora algunos de mis trabajos más recientes.</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">
-            Soluciones en Vivo<span className="text-orange-500">.</span>
-          </h2>
-          <p className="text-neutral-400 text-sm max-w-xl mx-auto">
-            Explora las páginas web y máquinas de venta diseñadas para nichos específicos.
-          </p>
-        </div>
+      
+          </div>
 
         {/* Grid de Tarjetas */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

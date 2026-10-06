@@ -2,15 +2,34 @@ import React, { useState } from "react";
 import { Calculator, Sparkles, CheckCircle2 } from "lucide-react";
 
 function ExampleBox() {
-  // Estado para la prueba interactiva
-  const [size, setSize] = useState(10); // Tamaño en cm
-  const [isColor, setIsColor] = useState(false);
+  // Estado para el nivel de servicio (0: Esencial, 1: Cotizador, 2: Pro)
+  const [selectedTier, setSelectedTier] = useState(1); // Cotizador por defecto
+  const [includeMaintenance, setIncludeMaintenance] = useState(true);
 
-  // Cálculo express en tiempo real
-  const basePrice = 800; // Base mínima
-  const pricePerCm = 100;
-  const colorExtra = isColor ? 400 : 0;
-  const totalPrice = basePrice + size * pricePerCm + colorExtra;
+  // Datos del escalafón oficial
+  const tiers = [
+    {
+      name: "Esencial",
+      basePrice: 3500,
+      maintPrice: 500,
+      desc: "Landing limpia, portafolio visual y contacto a WhatsApp.",
+    },
+    {
+      name: "Cotizador",
+      basePrice: 6500,
+      maintPrice: 900,
+      desc: "Filtrado automático, calculadora de precios e integración.",
+    },
+    {
+      name: "Sistema Pro",
+      basePrice: 12000,
+      maintPrice: 1800,
+      desc: "Agenda, pasarela de pagos (Stripe/MP) y soporte prioritario.",
+    },
+  ];
+
+  const current = tiers[selectedTier];
+  const totalPrice = current.basePrice + (includeMaintenance ? current.maintPrice : 0);
 
   return (
     <section className="w-full bg-black py-12 px-4 relative">
@@ -26,10 +45,10 @@ function ExampleBox() {
           </div>
           <div>
             <span className="text-[10px] font-black uppercase tracking-widest text-amber-400">
-              Prueba de Lógica Express
+              Prueba de Lógica Interactiva
             </span>
             <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight">
-              Calculadora Rápida de Muestra
+              Simula la Inversión de tu Sitio Web
             </h3>
           </div>
         </div>
@@ -39,40 +58,49 @@ function ExampleBox() {
           
           {/* Controles */}
           <div className="space-y-5">
-            {/* Control 1: Tamaño */}
+            {/* Selector de Nivel */}
             <div className="space-y-2">
-              <div className="flex justify-between text-xs font-bold uppercase tracking-wider text-neutral-400">
-                <span>Tamaño Estimado:</span>
-                <span className="text-amber-400 font-mono text-sm">{size} cm</span>
+              <label className="text-xs font-bold uppercase tracking-wider text-neutral-400 block">
+                Selecciona el Tipo de Sistema:
+              </label>
+              <div className="grid grid-cols-3 gap-1.5 p-1 bg-neutral-900 rounded-xl border border-neutral-800">
+                {tiers.map((tier, idx) => (
+                  <button
+                    key={tier.name}
+                    onClick={() => setSelectedTier(idx)}
+                    className={`py-2 text-[11px] font-bold uppercase rounded-lg transition-all duration-200 ${
+                      selectedTier === idx
+                        ? "bg-orange-600 text-white shadow-md"
+                        : "text-neutral-400 hover:text-white"
+                    }`}
+                  >
+                    {tier.name}
+                  </button>
+                ))}
               </div>
-              <input
-                type="range"
-                min="5"
-                max="30"
-                value={size}
-                onChange={(e) => setSize(Number(e.target.value))}
-                className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-orange-500"
-              />
+              <p className="text-[11px] text-neutral-400 pt-1 leading-snug">
+                {current.desc}
+              </p>
             </div>
 
-            {/* Control 2: Color u Sombra */}
+            {/* Toggle Mantenimiento Mensual */}
             <button
-              onClick={() => setIsColor(!isColor)}
+              onClick={() => setIncludeMaintenance(!includeMaintenance)}
               className={`w-full py-2.5 px-4 rounded-xl border text-xs font-bold uppercase tracking-wider flex items-center justify-between transition-all duration-200 ${
-                isColor
+                includeMaintenance
                   ? "bg-orange-950/50 border-orange-500 text-amber-400"
                   : "bg-neutral-900 border-neutral-800 text-neutral-400 hover:text-white"
               }`}
             >
-              <span>{isColor ? "Con Color / Sombra Completa" : "Solo Línea / Negro"}</span>
-              <CheckCircle2 className={`w-4 h-4 ${isColor ? "text-orange-500" : "text-neutral-600"}`} />
+              <span>+ Mantenimiento (${current.maintPrice} MXN/mes)</span>
+              <CheckCircle2 className={`w-4 h-4 ${includeMaintenance ? "text-orange-500" : "text-neutral-600"}`} />
             </button>
           </div>
 
           {/* Resultado Express */}
           <div className="bg-black border border-neutral-900 rounded-2xl p-5 text-center space-y-2 relative">
             <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-500">
-              Estimado de Salida
+              Estimado de Inversión Inicial
             </span>
             <div className="text-3xl sm:text-4xl font-black text-white tracking-tight font-mono">
               ${totalPrice.toLocaleString("es-MX")}{" "}
@@ -80,7 +108,11 @@ function ExampleBox() {
             </div>
             <div className="inline-flex items-center gap-1 text-[10px] text-amber-400 font-semibold uppercase tracking-wide">
               <Sparkles className="w-3 h-3" />
-              <span>Calculado automáticamente</span>
+              <span>
+                {includeMaintenance
+                  ? `Desarrollo $${current.basePrice.toLocaleString()} + 1er Mes Mantenimiento`
+                  : `Solo Desarrollo $${current.basePrice.toLocaleString()}`}
+              </span>
             </div>
           </div>
 

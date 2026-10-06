@@ -19,23 +19,6 @@ function Footer() {
           </p>
         </div>
 
-        {/* Enlaces Rápidos */}
-        <div className="flex items-center gap-6 text-xs font-bold uppercase tracking-widest text-neutral-400">
-          <a
-            href="#demo"
-            className="hover:text-amber-400 transition-colors duration-200"
-          >
-            Demo Tatuadores
-          </a>
-          <span className="text-neutral-800">•</span>
-          <a
-            href="#contacto"
-            className="hover:text-amber-400 transition-colors duration-200"
-          >
-            Contacto
-          </a>
-        </div>
-
         {/* Copyright */}
         <p className="text-xs font-semibold text-neutral-500 tracking-wider">
           © {currentYear}{" "}

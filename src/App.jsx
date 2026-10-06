@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 // Componentes estructurales globales
 import NavBar from "./components/Layout/NavBar/NavBar.jsx";
 import Footer from "./components/Layout/Footer/Footer.jsx";
+import WhatsAppButton from "./components/Layout/WhatsApp/WhatsApp.jsx";
 
 // Componentes del portafolio personal
 import Header from "./components/Portfolio/Header/Header.jsx";
@@ -30,6 +31,7 @@ function App() {
                 <Main />
                 <Gallery />
                 <ExampleBox />
+                <WhatsAppButton />
               </main>
             </>
           }

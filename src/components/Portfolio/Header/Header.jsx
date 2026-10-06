@@ -3,17 +3,11 @@ import HeroPict from "../../../assets/Hero/Hero_pict.jpg";
 
 function Header() {
   return (
-    <header className="flex flex-col items-center justify-center py-16 px-4 text-center bg-black border-b border-neutral-900 relative overflow-hidden">
+    <header className="flex flex-col items-center justify-center py-10 px-4 text-center bg-black border-b border-neutral-900 relative overflow-hidden">
       {/* Resplandor ambiental de fondo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-orange-600/15 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Badge de propuesta de valor */}
-      <div className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-8 rounded-full bg-orange-950/60 border border-orange-500/40 text-amber-400 text-xs font-bold uppercase tracking-widest z-10">
-        <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-        Páginas Web para Artistas
-      </div>
-
-      {/* Avatar con aura naranja tigre */}
+            {/* Avatar con aura naranja tigre */}
       <div className="relative mb-8 group z-10">
         <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-amber-400 rounded-full blur-md opacity-60 group-hover:opacity-100 transition duration-300" />
         <img
@@ -25,7 +19,7 @@ function Header() {
 
       {/* Nombre principal */}
       <h1 className="text-4xl sm:text-6xl font-black tracking-tighter text-white uppercase mb-2 z-10">
-        Narayan B<span className="text-orange-500">.</span>
+        Narayan<span className="text-orange-500">.</span>
       </h1>
 
       {/* Subtítulo / Especialidad */}
