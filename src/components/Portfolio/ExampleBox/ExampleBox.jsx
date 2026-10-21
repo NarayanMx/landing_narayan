@@ -56,7 +56,7 @@ function ExampleBox() {
             {/* Selector de Nivel (2 Opciones) */}
             <div className="space-y-2">
               <label className="text-xs font-tech font-bold uppercase tracking-wider text-neutral-400 block">
-                Selecciona el Tipo de Sistema:
+                Selecciona el Tipo de Página:
               </label>
               <div className="grid grid-cols-2 gap-1.5 p-1 bg-neutral-900 rounded-xl border border-neutral-800">
                 {tiers.map((tier, idx) => (
