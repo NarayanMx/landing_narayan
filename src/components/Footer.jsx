@@ -15,7 +15,7 @@ function Footer() {
 
   return (
     <footer className="w-full bg-black border-t border-neutral-900 py-12 px-4 relative overflow-hidden">
-      {/* Resplandor ambiental de fondo sutil con tu tono azul/cian */}
+      {/* Resplandor ambiental de fondo sutil */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-28 bg-[#004966]/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
@@ -25,48 +25,48 @@ function Footer() {
           <Link
             to="/"
             onClick={handleGoHome}
-            className="font-heading text-xl font-black text-white tracking-tighter uppercase group inline-block"
+            className="font-heading text-xl font-bold text-white tracking-tighter group inline-block"
           >
-            Narayan B<span className="text-[#99E2FF] inline-block transition-transform group-hover:scale-125">.</span>
+            Narayan<span className="text-[#52A9CC] inline-block transition-transform group-hover:scale-125">.</span>
           </Link>
-          <p className="text-xs text-neutral-500 font-medium tracking-wide">
-            Desarrollo Web & Soluciones Digitales
+          <p className="text-xs text-[#004966] font-medium tracking-wide">
+            Sistemas web y agendas para tatuadores
           </p>
         </div>
 
         {/* Enlaces Rápidos de Navegación */}
-        <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-tech font-bold uppercase tracking-wider text-neutral-400">
+        <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-medium tracking-wide text-[#52A9CC]">
           <Link
             to="/"
             onClick={handleGoHome}
-            className="hover:text-[#99E2FF] transition-colors"
+            className="hover:text-white transition-colors"
           >
             Inicio
           </Link>
           <a
             href="#demos"
-            className="hover:text-[#99E2FF] transition-colors"
+            className="hover:text-white transition-colors"
           >
-            Proyectos
+            Demos
           </a>
           <a
             href="#cotizador"
-            className="hover:text-[#99E2FF] transition-colors"
+            className="hover:text-white transition-colors"
           >
             Cotizador
           </a>
           <a
             href="#contacto"
-            className="hover:text-[#99E2FF] transition-colors"
+            className="hover:text-white transition-colors"
           >
             Contacto
           </a>
         </div>
 
         {/* Copyright */}
-        <p className="text-xs font-tech font-semibold text-neutral-500 tracking-wider text-center md:text-right">
+        <p className="text-xs font-normal text-[#004966] tracking-wide text-center md:text-right">
           © {currentYear}{" "}
-          <span className="text-[#CCF1FF] font-bold">Narayan Bañuelos</span>
+          <span className="text-[#52A9CC] font-medium">Narayan Bañuelos</span>
           . Todos los derechos reservados.
         </p>
 

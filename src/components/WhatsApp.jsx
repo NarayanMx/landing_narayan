@@ -6,7 +6,7 @@ function WhatsAppButton() {
   // Configuración
   const phoneNumber = "523311934925";
   const defaultMessage = encodeURIComponent(
-    "Hola Narayan, vi tu página web y me interesa cotizar un proyecto."
+    "Hola Narayan, vi tu página. Me interesa cotizar una landing / sistema para mi agenda de tatuajes."
   );
   
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${defaultMessage}`;

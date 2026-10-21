@@ -2,17 +2,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-// Componentes estructurales globales
-import NavBar from "./components/Layout/NavBar/NavBar.jsx";
-import Footer from "./components/Layout/Footer/Footer.jsx";
-import WhatsAppButton from "./components/Layout/WhatsApp/WhatsApp.jsx";
-import Contacto from "./components/Layout/Contacto/Contacto.jsx";
-
-// Componentes del portafolio personal
-import Header from "./components/Portfolio/Header/Header.jsx";
-import Main from "./components/Portfolio/Main/Main.jsx";
-import Gallery from "./components/Portfolio/Gallery/Gallery.jsx";
-import ExampleBox from "./components/Portfolio/ExampleBox/ExampleBox.jsx";
+import NavBar from "./components/NavBar.jsx";
+import Footer from "./components/Footer.jsx";
+import WhatsAppButton from "./components/WhatsApp.jsx";
+import Contacto from "./components/Contacto.jsx";
+import Header from "./components/Header.jsx";
+import Main from "./components/Main.jsx";
+import Gallery from "./components/Gallery.jsx";
+import ExampleBox from "./components/ExampleBox.jsx";
 
 function App() {
   return (

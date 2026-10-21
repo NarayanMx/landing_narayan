@@ -2,51 +2,51 @@
 import React from "react";
 import { ExternalLink, Sparkles } from "lucide-react";
 
-import img1 from "../../../assets/Hero/Demos/bang.png";
-import img2 from "../../../assets/Hero/Demos/laura.png";
+import img1 from "../assets/Demos/bang.png";
+import img2 from "../assets/Demos/laura.png";
 
-// Datos integrados con las tarifas y categorías correspondientes
+// Datos integrados optimizados con narrativa de solución
 const projects = [
   {
     id: "bang-bang-tattoo",
     title: "Bang Bang NYC — Studio & Author Demo",
     category: "Paquete Esencial ($3,000 MXN)",
     description:
-      "Landing page de alto impacto visual inspirada en estudios de nivel internacional. Diseñada para proyectar autoridad, mostrar portafolio en alta resolución y resolver preguntas frecuentes antes de agendar.",
+      "Landing page de alto impacto visual. Proyecta autoridad inmediata, despliega el portafolio en HD con carga ultrarrápida y resuelve preguntas frecuentes de clientes antes de agendar.",
     image: img1,
     demoUrl: "https://bang-demo-tawny.vercel.app/",
-    tags: ["React", "Tailwind CSS", "Vercel", "UX para Artistas"],
+    tags: ["React", "Portafolio HD", "Filtro FAQ", "Fast-Load"],
   },
   {
     id: "laura-anunnaki-demo",
     title: "Laura Anunnaki — Kawaii & Glitter Realism",
     category: "Paquete Cotizador ($6,000 MXN)",
     description:
-      "Plataforma interactiva con cotizador personalizado en tiempo real ('Diseña tu Presupuesto'). Permite seleccionar complejidad, colores y zona del cuerpo para enviar la propuesta lista a WhatsApp.",
+      "Sistema interactivo 'Diseña tu Presupuesto'. Permite al cliente seleccionar tamaño en cm, zona del cuerpo y color para enviar la propuesta lista y precotizada directamente a tu WhatsApp.",
     image: img2,
     demoUrl: "https://laura-anunnaki-demo.vercel.app/",
-    tags: ["React", "Cotizador Interactivo", "WhatsApp API", "UI Vibrant"],
+    tags: ["Cotizador Interactivo", "WhatsApp API", "Filtro de DMs", "React"],
   },
 ];
 
 function Gallery() {
   return (
-    <section id="demos" className="w-full bg-black py-16 px-4 relative scroll-mt-20">
+    <section id="demos" className="w-full bg-black py-16 px-4 relative scroll-mt-20 border-b border-neutral-900">
       <div className="max-w-5xl mx-auto space-y-10">
         
-        {/* Encabezado de la Galería */}
+        {/* Encabezado de la Galería (La Solución) */}
         <div className="text-center space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A2733] border border-[#52A9CC]/40 text-[#99E2FF] text-xs font-tech font-bold uppercase tracking-widest shadow-inner">
             <Sparkles className="w-3.5 h-3.5 text-[#52A9CC]" />
-            <span>Demos Interactivas en Vivo</span>
+            <span>La Solución en Acción</span>
           </div>
 
           <h2 className="font-heading text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">
-            Explora algunos de mis <span className="text-[#99E2FF]">trabajos más recientes</span>
+            Prueba la experiencia que <span className="text-[#99E2FF]">tendrán tus clientes</span>
           </h2>
           
           <p className="text-neutral-400 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
-            Prueba el rendimiento, la estética y la fluidez de las plataformas desplegadas en servidores de alta velocidad.
+            Explora las demos interactivas en vivo. Diseñadas para cargar en milisegundos desde cualquier teléfono y filtrar cotizaciones automáticamente.
           </p>
         </div>
 
@@ -96,7 +96,7 @@ function Gallery() {
                   ))}
                 </div>
 
-                {/* Indicador visual de acción / Botón con tu gradiente Azul/Cian */}
+                {/* Indicador visual de acción */}
                 <div className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#004966] via-[#52A9CC] to-[#99E2FF] text-black font-tech font-black py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-[#0A2733]/60 group-active:scale-95">
                   <span>Probar Demo en Vivo</span>
                   <ExternalLink className="w-4 h-4" />
