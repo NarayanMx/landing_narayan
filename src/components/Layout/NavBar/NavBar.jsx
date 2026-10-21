@@ -1,3 +1,4 @@
+// src/components/Layout/NavBar/NavBar.jsx
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -6,52 +7,54 @@ function NavBar() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Función para saber si la ruta está activa
-  const isActive = (path) => location.pathname === path;
+  // Función para redirigir al inicio y hacer scroll suave hasta arriba
+  const handleGoHome = () => {
+    setIsOpen(false);
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
-    <nav className="w-full bg-black/90 backdrop-blur-md border-b border-neutral-900 sticky top-0 z-50 px-4 py-3.5">
+    <nav className="w-full fixed top-0 left-0 z-50 bg-black/80 backdrop-blur-md border-b border-neutral-900/80 px-4 py-3.5 transition-all">
       <div className="max-w-5xl mx-auto flex items-center justify-between">
         
         {/* Logotipo / Marca Principal */}
         <Link 
           to="/" 
-          onClick={() => setIsOpen(false)}
-          className="text-lg font-black text-white tracking-tighter uppercase group shrink-0"
+          onClick={handleGoHome}
+          className="font-heading text-lg font-black text-white tracking-tighter uppercase group shrink-0"
         >
-          Narayan B<span className="text-orange-500 inline-block transition-transform group-hover:scale-125">.</span>
+          Narayan B<span className="text-[#99E2FF] inline-block transition-transform group-hover:scale-125">.</span>
         </Link>
 
         {/* Links de Navegación - Escritorio */}
-        <div className="hidden md:flex items-center gap-2 text-xs font-bold uppercase tracking-wider">
+        <div className="hidden md:flex items-center gap-1 font-tech text-xs font-medium uppercase tracking-wider">
           <Link
             to="/"
-            className={`px-3 py-1.5 rounded-lg transition-all duration-200 ${
-              isActive("/")
-                ? "text-amber-400 bg-orange-950/40 border border-orange-500/30"
-                : "text-neutral-400 hover:text-white hover:bg-neutral-900"
-            }`}
+            onClick={handleGoHome}
+            className="px-3 py-1.5 rounded-lg text-neutral-400 hover:text-[#99E2FF] hover:bg-neutral-900/60 transition-all duration-200"
           >
             Inicio
           </Link>
 
           <a
-            href="#proyectos"
-            className="px-3 py-1.5 rounded-lg text-neutral-400 hover:text-white hover:bg-neutral-900 transition-all duration-200"
+            href="#demos"
+            className="px-3 py-1.5 rounded-lg text-neutral-400 hover:text-[#99E2FF] hover:bg-neutral-900/60 transition-all duration-200"
           >
             Proyectos
           </a>
 
           <a
             href="#cotizador"
-            className="px-3 py-1.5 rounded-lg text-neutral-400 hover:text-white hover:bg-neutral-900 transition-all duration-200"
+            className="px-3 py-1.5 rounded-lg text-neutral-400 hover:text-[#99E2FF] hover:bg-neutral-900/60 transition-all duration-200"
           >
             Cotizador
           </a>
 
           <a
             href="#contacto"
-            className="px-3 py-1.5 rounded-lg text-neutral-400 hover:text-white hover:bg-neutral-900 transition-all duration-200"
+            className="px-3 py-1.5 rounded-lg text-neutral-400 hover:text-[#99E2FF] hover:bg-neutral-900/60 transition-all duration-200"
           >
             Contacto
           </a>
@@ -63,30 +66,26 @@ function NavBar() {
           className="md:hidden p-1.5 rounded-lg text-neutral-400 hover:text-white hover:bg-neutral-900 transition-colors"
           aria-label="Abrir menú"
         >
-          {isOpen ? <X className="w-6 h-6 text-orange-500" /> : <Menu className="w-6 h-6" />}
+          {isOpen ? <X className="w-6 h-6 text-[#99E2FF]" /> : <Menu className="w-6 h-6" />}
         </button>
 
       </div>
 
       {/* Menú Desplegable - Móvil */}
       {isOpen && (
-        <div className="md:hidden pt-4 pb-2 mt-3 border-t border-neutral-900 flex flex-col space-y-2 text-xs font-bold uppercase tracking-wider">
+        <div className="md:hidden pt-4 pb-2 mt-3 border-t border-neutral-900 flex flex-col space-y-1 font-tech text-xs font-medium uppercase tracking-wider bg-black/95">
           <Link
             to="/"
-            onClick={() => setIsOpen(false)}
-            className={`px-3 py-2 rounded-lg transition-all duration-200 ${
-              isActive("/")
-                ? "text-amber-400 bg-orange-950/40 border border-orange-500/30"
-                : "text-neutral-400 hover:text-white hover:bg-neutral-900"
-            }`}
+            onClick={handleGoHome}
+            className="px-3 py-2 rounded-lg text-neutral-400 hover:text-[#99E2FF] hover:bg-neutral-900/60 transition-all duration-200"
           >
             Inicio
           </Link>
 
           <a
-            href="#proyectos"
+            href="#demos"
             onClick={() => setIsOpen(false)}
-            className="px-3 py-2 rounded-lg text-neutral-400 hover:text-white hover:bg-neutral-900 transition-all duration-200"
+            className="px-3 py-2 rounded-lg text-neutral-400 hover:text-[#99E2FF] hover:bg-neutral-900/60 transition-all duration-200"
           >
             Proyectos
           </a>
@@ -94,7 +93,7 @@ function NavBar() {
           <a
             href="#cotizador"
             onClick={() => setIsOpen(false)}
-            className="px-3 py-2 rounded-lg text-neutral-400 hover:text-white hover:bg-neutral-900 transition-all duration-200"
+            className="px-3 py-2 rounded-lg text-neutral-400 hover:text-[#99E2FF] hover:bg-neutral-900/60 transition-all duration-200"
           >
             Cotizador
           </a>
@@ -102,7 +101,7 @@ function NavBar() {
           <a
             href="#contacto"
             onClick={() => setIsOpen(false)}
-            className="px-3 py-2 rounded-lg text-neutral-400 hover:text-white hover:bg-neutral-900 transition-all duration-200"
+            className="px-3 py-2 rounded-lg text-neutral-400 hover:text-[#99E2FF] hover:bg-neutral-900/60 transition-all duration-200"
           >
             Contacto
           </a>
