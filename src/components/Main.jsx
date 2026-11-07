@@ -1,64 +1,61 @@
 // src/components/Portfolio/Main/Main.jsx
 import React from "react";
-import { MessageSquareX, CalendarX, ImageOff } from "lucide-react";
+import { Share2, Zap, Search } from "lucide-react";
 
 function Main() {
   return (
-    <main className="w-full bg-black py-16 px-4 relative border-b border-neutral-900">
-      {/* Resplandor ambiental central */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#004966]/15 rounded-full blur-[120px] pointer-events-none" />
+    <main className="w-full bg-[#05070B] py-16 px-4 relative border-b border-white/10">
+      {/* Resplandor ambiental Neón central */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#00F0FF]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         
-        {/* SECCIÓN 2: Dolor y Empatía */}
+        {/* SECCIÓN 2: El Dolor del Negocio Local (Problema vs. Solución) */}
         <section className="space-y-10">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <h3 className="font-heading text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
-              ¿Pasas más tiempo respondiendo DMs que tatuando<span className="text-[#99E2FF]">?</span>
-            </h3>
-            <p className="font-tech text-[#52A9CC] text-xs sm:text-sm font-bold tracking-widest uppercase">
-              Instagram no fue diseñado para gestionar la agenda de un estudio
-            </p>
+            <h2 className="font-heading text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+              ¿Por qué tu negocio necesita una <span className="text-[#00F0FF] drop-shadow-[0_0_10px_rgba(0,240,255,0.8)]">Landing Page dedicada?</span>
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            {/* Card 1: Tiempo perdido en DMs */}
-            <div className="bg-neutral-950 border border-neutral-900 hover:border-[#52A9CC]/50 p-6 rounded-2xl transition-all duration-300 group shadow-xl">
-              <div className="w-12 h-12 rounded-xl bg-[#0A2733] border border-[#52A9CC]/30 flex items-center justify-center mb-6 text-[#99E2FF] group-hover:scale-110 transition-transform">
-                <MessageSquareX className="w-6 h-6" />
+            {/* Card 1: Pérdida de clientes en redes */}
+            <div className="bg-slate-900/60 border border-white/10 hover:border-[#00F0FF]/60 p-6 rounded-2xl transition-all duration-300 group shadow-xl backdrop-blur-md hover:shadow-[0_0_25px_rgba(0,240,255,0.15)] hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-xl bg-slate-950 border border-[#00F0FF]/40 flex items-center justify-center mb-6 text-[#00F0FF] group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(0,240,255,0.4)] transition-all">
+                <Share2 className="w-6 h-6" />
               </div>
-              <h4 className="font-tech text-lg font-black text-white uppercase tracking-tight mb-2">
-                Pérdida de Tiempo en DMs
-              </h4>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Decenas de mensajes al día preguntando <span className="text-white font-medium">"¿precio?"</span> sin enviar la idea, la zona en cm ni la referencia. Horas perdidas cotizando a curiosos.
+              <h3 className="font-tech text-lg font-black text-white uppercase tracking-tight mb-2">
+                Pérdida de clientes en redes
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Instagram y Facebook dependen de algoritmos. Tu web es tu propiedad donde nadie compite por la atención de tu cliente.
               </p>
             </div>
 
-            {/* Card 2: Cancelaciones / No-shows */}
-            <div className="bg-neutral-950 border border-neutral-900 hover:border-[#52A9CC]/50 p-6 rounded-2xl transition-all duration-300 group shadow-xl">
-              <div className="w-12 h-12 rounded-xl bg-[#0A2733] border border-[#52A9CC]/30 flex items-center justify-center mb-6 text-[#CCF1FF] group-hover:scale-110 transition-transform">
-                <CalendarX className="w-6 h-6" />
+            {/* Card 2: Velocidad y respuesta inmediata */}
+            <div className="bg-slate-900/60 border border-white/10 hover:border-[#00F0FF]/60 p-6 rounded-2xl transition-all duration-300 group shadow-xl backdrop-blur-md hover:shadow-[0_0_25px_rgba(0,240,255,0.15)] hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-xl bg-slate-950 border border-[#00F0FF]/40 flex items-center justify-center mb-6 text-[#00F0FF] group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(0,240,255,0.4)] transition-all">
+                <Zap className="w-6 h-6" />
               </div>
-              <h4 className="font-tech text-lg font-black text-white uppercase tracking-tight mb-2">
-                Cancelaciones y No-Shows
-              </h4>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Clientes que piden espacio en tu semana pero jamás depositan el anticipo para apartar. Fechas muertas que pudieron ser ocupadas.
+              <h3 className="font-tech text-lg font-black text-white uppercase tracking-tight mb-2">
+                Velocidad y respuesta inmediata
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Sitios pesados hacen que el cliente se vaya. Una landing ligera carga en 1 segundo y pone tu botón de contacto al frente.
               </p>
             </div>
 
-            {/* Card 3: Algoritmo y Calidad */}
-            <div className="bg-neutral-950 border border-neutral-900 hover:border-[#52A9CC]/50 p-6 rounded-2xl transition-all duration-300 group shadow-xl">
-              <div className="w-12 h-12 rounded-xl bg-[#0A2733] border border-[#52A9CC]/30 flex items-center justify-center mb-6 text-[#52A9CC] group-hover:scale-110 transition-transform">
-                <ImageOff className="w-6 h-6" />
+            {/* Card 3: Presencia en Google */}
+            <div className="bg-slate-900/60 border border-white/10 hover:border-[#00F0FF]/60 p-6 rounded-2xl transition-all duration-300 group shadow-xl backdrop-blur-md hover:shadow-[0_0_25px_rgba(0,240,255,0.15)] hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-xl bg-slate-950 border border-[#00F0FF]/40 flex items-center justify-center mb-6 text-[#00F0FF] group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(0,240,255,0.4)] transition-all">
+                <Search className="w-6 h-6" />
               </div>
-              <h4 className="font-tech text-lg font-black text-white uppercase tracking-tight mb-2">
-                Portafolio Comprimido
-              </h4>
-              <p className="text-xs text-neutral-400 leading-relaxed">
-                Instagram destruye la nitidez de tus fotos con compresión pesada y oculta tus trabajos en el feed. Sin presencia propia, no existes en búsquedas de Google.
+              <h3 className="font-tech text-lg font-black text-white uppercase tracking-tight mb-2">
+                Presencia en Google
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Aparecer en búsquedas locales cuando alguien necesita tu servicio hoy mismo marca la diferencia frente a tu competencia.
               </p>
             </div>
 

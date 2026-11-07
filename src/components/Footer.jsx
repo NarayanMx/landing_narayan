@@ -14,9 +14,9 @@ function Footer() {
   };
 
   return (
-    <footer className="w-full bg-black border-t border-neutral-900 py-12 px-4 relative overflow-hidden">
-      {/* Resplandor ambiental de fondo sutil */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-28 bg-[#004966]/20 rounded-full blur-3xl pointer-events-none" />
+    <footer className="w-full bg-[#05070B] border-t border-white/10 py-12 px-4 relative overflow-hidden">
+      {/* Resplandor ambiental Neón */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-28 bg-[#00F0FF]/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
         
@@ -25,48 +25,48 @@ function Footer() {
           <Link
             to="/"
             onClick={handleGoHome}
-            className="font-heading text-xl font-bold text-white tracking-tighter group inline-block"
+            className="font-heading text-xl font-bold text-white tracking-tight group inline-block uppercase"
           >
-            Narayan<span className="text-[#52A9CC] inline-block transition-transform group-hover:scale-125">.</span>
+            Narayan<span className="text-[#00F0FF] drop-shadow-[0_0_8px_rgba(0,240,255,0.8)] inline-block transition-transform group-hover:scale-125">.</span>
           </Link>
-          <p className="text-xs text-[#004966] font-medium tracking-wide">
-            Sistemas web y agendas para tatuadores
+          <p className="text-xs text-slate-400 font-tech uppercase tracking-wider">
+            Desarrollo Web Estratégico para Negocios Locales
           </p>
         </div>
 
         {/* Enlaces Rápidos de Navegación */}
-        <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-medium tracking-wide text-[#52A9CC]">
+        <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-tech font-bold uppercase tracking-wider text-slate-300">
           <Link
             to="/"
             onClick={handleGoHome}
-            className="hover:text-white transition-colors"
+            className="hover:text-[#00F0FF] transition-colors"
           >
             Inicio
           </Link>
           <a
             href="#demos"
-            className="hover:text-white transition-colors"
+            className="hover:text-[#00F0FF] transition-colors"
           >
             Demos
           </a>
           <a
             href="#cotizador"
-            className="hover:text-white transition-colors"
+            className="hover:text-[#00F0FF] transition-colors"
           >
-            Cotizador
+            Proceso
           </a>
           <a
             href="#contacto"
-            className="hover:text-white transition-colors"
+            className="hover:text-[#00F0FF] transition-colors"
           >
             Contacto
           </a>
         </div>
 
         {/* Copyright */}
-        <p className="text-xs font-normal text-[#004966] tracking-wide text-center md:text-right">
+        <p className="text-xs font-mono text-slate-400 tracking-wide text-center md:text-right">
           © {currentYear}{" "}
-          <span className="text-[#52A9CC] font-medium">Narayan Bañuelos</span>
+          <span className="text-white font-medium">Narayan Bañuelos</span>
           . Todos los derechos reservados.
         </p>
 

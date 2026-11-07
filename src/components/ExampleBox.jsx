@@ -1,217 +1,100 @@
 // src/components/Portfolio/ExampleBox/ExampleBox.jsx
-import React, { useState } from "react";
-import { 
-  Calculator, 
-  Sparkles, 
-  CheckCircle2, 
-  ArrowRight, 
-  ChevronDown, 
-  RefreshCw, 
-  Palette, 
-  Megaphone, 
-  ShieldCheck, 
-  Server 
-} from "lucide-react";
+import React from "react";
+import { MessageSquare, Code, Rocket, CheckCircle2 } from "lucide-react";
 
 function ExampleBox() {
-  const [selectedTier, setSelectedTier] = useState(1);
-  const [includeMaintenance, setIncludeMaintenance] = useState(true);
-  const [showMaintDetails, setShowMaintDetails] = useState(false);
-
-  const tiers = [
+  const steps = [
     {
-      name: "Esencial",
-      basePrice: 3500,
-      maintPrice: 300,
-      desc: "Landing ultra rápida con portafolio HD, filtro de preguntas frecuentes y botón directo a tu WhatsApp.",
+      step: "01",
+      icon: MessageSquare,
+      title: "Platicamos tu necesidad",
+      desc: "Ajustamos la información clave de tu negocio, tus servicios estrella y tus promociones principales.",
     },
     {
-      name: "Cotizador",
-      basePrice: 6500,
-      maintPrice: 500,
-      desc: "Calculadora interactiva 'Diseña tu Presupuesto' que filtra tamaño, zona del cuerpo y color antes de agendar.",
-    },
-  ];
-
-  const current = tiers[selectedTier];
-  const totalPrice = current.basePrice + (includeMaintenance ? current.maintPrice : 0);
-
-  const getWhatsAppUrl = () => {
-    const text = encodeURIComponent(
-      `Hola Narayan, vi tu página. Me interesa cotizar una landing / sistema para mi agenda de tatuajes.`
-    );
-    return `https://wa.me/?text=${text}`;
-  };
-
-  const maintenanceFeatures = [
-    {
-      icon: RefreshCw,
-      title: "Actualización de Portafolio HD",
-      desc: "Subida y optimización constante de tus fotos de nuevos tatuajes y diseños disponibles (Flash Book) sin pérdida de calidad."
+      step: "02",
+      icon: Code,
+      title: "Construyo tu sitio",
+      desc: "Desarrollo una landing rápida, adaptada a celulares y conectada directamente a tu Google Maps y WhatsApp.",
     },
     {
-      icon: Megaphone,
-      title: "Promociones y Guest Spots",
-      desc: "Banners dinámicos para anunciar eventos, tours en otras ciudades, fechas abiertas de citas o descuentos de temporada."
+      step: "03",
+      icon: Rocket,
+      title: "Lanzamos y recibes clientes",
+      desc: "Te entrego todo listo y funcionando sin que tengas que mover una sola línea de código.",
     },
-    {
-      icon: Palette,
-      title: "Ajustes de Diseño y Estética",
-      desc: "Cambio de paleta de colores, tipografías o distribución visual cuando decidas renovar la identidad gráfica de tu estudio."
-    },
-    {
-      icon: Server,
-      title: "Hosting Ultra Rápido e Infraestructura",
-      desc: "Alojamiento en servidores SSL de alta velocidad para garantizar carga instantánea en teléfonos móviles."
-    },
-    {
-      icon: ShieldCheck,
-      title: "Soporte Técnico y Resguardos",
-      desc: "Monitoreo de seguridad, respaldos periódicos y mantenimiento preventivo del sistema de agendamiento/cotizador."
-    }
   ];
 
   return (
-    <section id="cotizador" className="w-full bg-black py-16 px-4 relative scroll-mt-20 border-b border-neutral-900">
-      <div className="max-w-3xl mx-auto bg-neutral-950 border border-neutral-900 hover:border-[#52A9CC]/50 rounded-3xl p-6 sm:p-10 transition-all duration-300 shadow-2xl relative overflow-hidden group">
+    <section id="cotizador" className="w-full bg-[#05070B] py-16 px-4 relative scroll-mt-20 border-b border-white/10">
+      {/* Resplandor ambiental Neón */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#00F0FF]/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto space-y-12 relative z-10">
         
-        {/* Luz de fondo ambiental */}
-        <div className="absolute top-0 right-0 w-48 h-48 bg-[#004966]/20 rounded-full blur-3xl pointer-events-none group-hover:bg-[#52A9CC]/20 transition-all duration-500" />
-
-        {/* Encabezado de la Oferta */}
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-xl bg-[#0A2733] border border-[#52A9CC]/40 flex items-center justify-center text-[#99E2FF]">
-            <Calculator className="w-5 h-5" />
+        {/* Encabezado según la estructura aprobada (Sección 4) */}
+        <div className="text-center space-y-3 max-w-xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-[#00F0FF]/40 text-[#00F0FF] text-xs font-tech font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(0,240,255,0.2)]">
+            <CheckCircle2 className="w-3.5 h-3.5 text-[#00F0FF]" />
+            <span>Proceso Simple</span>
           </div>
-          <div>
-            <span className="text-[10px] font-tech font-black uppercase tracking-widest text-[#99E2FF]">
-              Calculadora de Inversión Transparente
-            </span>
-            <h3 className="font-heading text-xl sm:text-2xl font-black text-white uppercase tracking-tight">
-              Configura el Sitio para tu Estudio
-            </h3>
-          </div>
-        </div>
 
-        {/* Contenido Interactivo */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
+          <h2 className="font-heading text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">
+            Sin complicaciones <span className="text-[#00F0FF] drop-shadow-[0_0_12px_rgba(0,240,255,0.6)]">técnicas para ti</span>
+          </h2>
           
-          {/* Controles */}
-          <div className="space-y-5">
-            {/* Selector de Nivel */}
-            <div className="space-y-2">
-              <label className="text-xs font-tech font-bold uppercase tracking-wider text-neutral-400 block">
-                Selecciona la Estructura:
-              </label>
-              <div className="grid grid-cols-2 gap-1.5 p-1 bg-neutral-900 rounded-xl border border-neutral-800">
-                {tiers.map((tier, idx) => (
-                  <button
-                    key={tier.name}
-                    onClick={() => setSelectedTier(idx)}
-                    className={`py-2 text-[11px] font-tech font-bold uppercase rounded-lg transition-all duration-200 ${
-                      selectedTier === idx
-                        ? "bg-[#004966] text-white shadow-md shadow-[#0A2733]/80 border border-[#52A9CC]/50"
-                        : "text-neutral-400 hover:text-white"
-                    }`}
-                  >
-                    {tier.name}
-                  </button>
-                ))}
-              </div>
-              <p className="text-[11px] text-neutral-400 pt-1 leading-snug">
-                {current.desc}
-              </p>
-            </div>
-
-            {/* Toggle Mantenimiento Mensual */}
-            <div className="space-y-2">
-              <button
-                onClick={() => setIncludeMaintenance(!includeMaintenance)}
-                className={`w-full py-2.5 px-4 rounded-xl border text-xs font-tech font-bold uppercase tracking-wider flex items-center justify-between transition-all duration-200 ${
-                  includeMaintenance
-                    ? "bg-[#0A2733]/70 border-[#52A9CC] text-[#CCF1FF]"
-                    : "bg-neutral-900 border-neutral-800 text-neutral-400 hover:text-white"
-                }`}
-              >
-                <span>+ Mantenimiento & Hosting (${current.maintPrice} MXN/mes)</span>
-                <CheckCircle2 className={`w-4 h-4 ${includeMaintenance ? "text-[#99E2FF]" : "text-neutral-600"}`} />
-              </button>
-
-              {/* Botón desplegable para ver detalles del mantenimiento */}
-              <button
-                onClick={() => setShowMaintDetails(!showMaintDetails)}
-                className="text-[10px] font-tech font-semibold text-[#52A9CC] hover:text-[#99E2FF] uppercase tracking-wider flex items-center gap-1 transition-colors px-1 pt-0.5"
-              >
-                <span>{showMaintDetails ? "Ocultar detalles del plan" : "¿Qué incluye el mantenimiento?"}</span>
-                <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${showMaintDetails ? "rotate-180" : ""}`} />
-              </button>
-            </div>
-          </div>
-
-          {/* Resultado y CTA */}
-          <div className="bg-black border border-neutral-900 rounded-2xl p-5 text-center space-y-4 relative">
-            <div className="space-y-1">
-              <span className="text-[10px] font-tech font-bold uppercase tracking-widest text-neutral-500 block">
-                Inversión Estimada
-              </span>
-              <div className="text-3xl sm:text-4xl font-mono font-black text-white tracking-tight">
-                ${totalPrice.toLocaleString("es-MX")}{" "}
-                <span className="text-xs text-[#99E2FF] font-tech font-bold">MXN</span>
-              </div>
-              <div className="inline-flex items-center gap-1 text-[10px] text-[#CCF1FF] font-tech font-semibold uppercase tracking-wide pt-1">
-                <Sparkles className="w-3 h-3 text-[#52A9CC]" />
-                <span>
-                  {includeMaintenance
-                    ? `Desarrollo $${current.basePrice.toLocaleString()} + 1er Mes de Soporte`
-                    : `Desarrollo Único $${current.basePrice.toLocaleString()}`}
-                </span>
-              </div>
-            </div>
-
-            {/* Botón de Acción Directo */}
-            <a
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full inline-flex items-center justify-center gap-2 bg-[#004966] hover:bg-[#52A9CC] text-white font-tech font-black py-3 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-[#0A2733]/80 active:scale-95"
-            >
-              <span>Apartar mi Proyecto</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-
+          <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Un flujo de trabajo transparente diseñado para poner tu negocio en línea en tiempo récord sin enredos técnicos.
+          </p>
         </div>
 
-        {/* Desglose de Beneficios del Mantenimiento (Accordion) */}
-        {showMaintDetails && (
-          <div className="mt-8 pt-6 border-t border-neutral-900 space-y-4 animate-fadeIn">
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-[#99E2FF]" />
-              <h4 className="font-tech text-xs font-black text-white uppercase tracking-wider">
-                Beneficios Incluidos en tu Plan Mensual
-              </h4>
-            </div>
+        {/* Pasos 1-2-3 (Grid de Tarjetas Neón) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {steps.map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={idx}
+                className="bg-slate-900/60 border border-white/10 hover:border-[#00F0FF]/60 p-6 rounded-3xl transition-all duration-300 flex flex-col justify-between group shadow-xl backdrop-blur-md hover:shadow-[0_0_25px_rgba(0,240,255,0.15)] hover:-translate-y-1 relative overflow-hidden"
+              >
+                {/* Número de paso estilizado en el fondo */}
+                <span className="absolute -top-2 -right-2 text-6xl font-black font-tech text-white/5 group-hover:text-[#00F0FF]/10 transition-colors pointer-events-none select-none">
+                  {item.step}
+                </span>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-              {maintenanceFeatures.map((feat, i) => {
-                const IconComponent = feat.icon;
-                return (
-                  <div key={i} className="bg-neutral-900/60 border border-neutral-800/80 p-3.5 rounded-xl space-y-1">
-                    <div className="flex items-center gap-2 text-[#99E2FF]">
-                      <IconComponent className="w-4 h-4 text-[#52A9CC]" />
-                      <span className="font-tech text-xs font-bold uppercase tracking-tight text-white">
-                        {feat.title}
-                      </span>
-                    </div>
-                    <p className="text-[11px] text-neutral-400 leading-relaxed">
-                      {feat.desc}
-                    </p>
+                <div className="space-y-4">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-950 border border-[#00F0FF]/40 flex items-center justify-center text-[#00F0FF] group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(0,240,255,0.4)] transition-all">
+                    <IconComponent className="w-6 h-6 stroke-[2]" />
                   </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
+
+                  <h3 className="font-tech text-lg font-black text-white uppercase tracking-tight">
+                    {item.step}. {item.title}
+                  </h3>
+
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <div className="pt-4 mt-4 border-t border-white/5 flex items-center gap-1.5 text-[10px] font-tech text-[#00F0FF] uppercase tracking-wider font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-pulse"></span>
+                  <span>Paso {item.step} de 3</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Cierre / Llamado rápido */}
+        <div className="text-center pt-4">
+          <a
+            href="https://wa.me/523300000000?text=Hola%20Narayan,%20quiero%20iniciar%20el%20paso%201%20para%20mi%20sitio%20web"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-[#00F0FF] hover:bg-cyan-300 text-slate-950 font-tech font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_0_25px_rgba(0,240,255,0.4)] hover:shadow-[0_0_35px_rgba(0,240,255,0.7)] hover:scale-[1.03] active:scale-95"
+          >
+            <span>🟢 Iniciar mi proyecto ahora</span>
+          </a>
+        </div>
 
       </div>
     </section>

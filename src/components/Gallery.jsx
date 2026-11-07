@@ -5,101 +5,114 @@ import { ExternalLink, Sparkles } from "lucide-react";
 import img1 from "../assets/Demos/bang.png";
 import img2 from "../assets/Demos/laura.png";
 
-// Datos integrados optimizados con narrativa de solución
+// Demos enfáticas por sectores clave de negocio local
 const projects = [
   {
-    id: "bang-bang-tattoo",
-    title: "Bang Bang NYC — Studio & Author Demo",
-    category: "Paquete Esencial ($3,000 MXN)",
+    id: "clinica-consultorio-demo",
+    title: "Landing para Clínica / Consultorio",
+    category: "Agendado de Citas Directo",
     description:
-      "Landing page de alto impacto visual. Proyecta autoridad inmediata, despliega el portafolio en HD con carga ultrarrápida y resuelve preguntas frecuentes de clientes antes de agendar.",
+      "Optimizada para profesionales de la salud y belleza. Facilita la selección de tratamientos, muestra horarios disponibles e integra confirmación directa por WhatsApp.",
     image: img1,
     demoUrl: "https://bang-demo-tawny.vercel.app/",
-    tags: ["React", "Portafolio HD", "Filtro FAQ", "Fast-Load"],
+    tags: ["Agendado Rápido", "Catálogo de Servicios", "Google Maps", "Fast-Load"],
   },
   {
-    id: "laura-anunnaki-demo",
-    title: "Laura Anunnaki — Kawaii & Glitter Realism",
-    category: "Paquete Cotizador ($6,000 MXN)",
+    id: "barberia-taller-demo",
+    title: "Landing para Barbería / Servicio Técnico / Taller",
+    category: "Ubicación & Cotización Exprés",
     description:
-      "Sistema interactivo 'Diseña tu Presupuesto'. Permite al cliente seleccionar tamaño en cm, zona del cuerpo y color para enviar la propuesta lista y precotizada directamente a tu WhatsApp.",
+      "Pensada para negocios de alto flujo local. Muestra lista de precios, ubicación exacta con botón de cómo llegar y enlace rápido para emergencias o citas al instante.",
     image: img2,
     demoUrl: "https://laura-anunnaki-demo.vercel.app/",
-    tags: ["Cotizador Interactivo", "WhatsApp API", "Filtro de DMs", "React"],
+    tags: ["Ubicación 1-Clic", "Precios Claras", "WhatsApp API", "React"],
+  },
+  {
+    id: "servicio-profesional-demo",
+    title: "Landing para Estudio de Tatuaje / Servicios Profesionales",
+    category: "Autoridad & Presupuesto Interactivo",
+    description:
+      "Diseñada para resaltar el valor de tu trabajo. Permite exhibir un portafolio en alta resolución y resolver dudas frecuentes antes de contactar.",
+    image: img1,
+    demoUrl: "https://bang-demo-tawny.vercel.app/",
+    tags: ["Portafolio HD", "Filtro de DMs", "Cotizador Rápido", "Alta Conversión"],
   },
 ];
 
 function Gallery() {
   return (
-    <section id="demos" className="w-full bg-black py-16 px-4 relative scroll-mt-20 border-b border-neutral-900">
-      <div className="max-w-5xl mx-auto space-y-10">
+    <section id="demos" className="w-full bg-[#05070B] py-16 px-4 relative scroll-mt-20 border-b border-white/10">
+      {/* Resplandor ambiental de neón */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00F0FF]/10 rounded-full blur-[160px] pointer-events-none" />
+
+      <div className="max-w-5xl mx-auto space-y-10 relative z-10">
         
-        {/* Encabezado de la Galería (La Solución) */}
+        {/* Encabezado según la estructura aprobada (Sección 3) */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A2733] border border-[#52A9CC]/40 text-[#99E2FF] text-xs font-tech font-bold uppercase tracking-widest shadow-inner">
-            <Sparkles className="w-3.5 h-3.5 text-[#52A9CC]" />
-            <span>La Solución en Acción</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-[#00F0FF]/40 text-[#00F0FF] text-xs font-tech font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(0,240,255,0.2)]">
+            <Sparkles className="w-3.5 h-3.5 text-[#00F0FF]" />
+            <span>Portafolio Local</span>
           </div>
 
           <h2 className="font-heading text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">
-            Prueba la experiencia que <span className="text-[#99E2FF]">tendrán tus clientes</span>
+            Ejemplos de sitios <span className="text-[#00F0FF] drop-shadow-[0_0_12px_rgba(0,240,255,0.6)]">optimizados para conversión</span>
           </h2>
           
-          <p className="text-neutral-400 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
-            Explora las demos interactivas en vivo. Diseñadas para cargar en milisegundos desde cualquier teléfono y filtrar cotizaciones automáticamente.
+          <p className="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
+            Explora maquetas interactivas adaptadas a los sectores de tu ciudad. Diseñadas para cargar en milisegundos y llevar clientes a tu chat.
           </p>
         </div>
 
-        {/* Grid de Tarjetas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Grid de Tarjetas por Sector */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {projects.map((project) => (
             <a
               key={project.id}
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-neutral-950 border border-neutral-900 hover:border-[#52A9CC]/50 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col group shadow-xl cursor-pointer"
+              className="bg-slate-900/60 border border-white/10 hover:border-[#00F0FF]/60 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col group shadow-xl backdrop-blur-md hover:shadow-[0_0_25px_rgba(0,240,255,0.15)] hover:-translate-y-1 cursor-pointer"
             >
-              {/* Contenedor de la Imagen / Preview */}
-              <div className="relative overflow-hidden aspect-video bg-neutral-900">
+              {/* Preview de la Maqueta */}
+              <div className="relative overflow-hidden aspect-video bg-slate-950">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent opacity-80" />
-                <span className="absolute top-4 left-4 bg-black/80 border border-[#52A9CC]/40 text-[#CCF1FF] font-tech text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full backdrop-blur-md">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-90" />
+                <span className="absolute top-3 left-3 bg-slate-950/90 border border-[#00F0FF]/40 text-[#00F0FF] font-tech text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full backdrop-blur-md">
                   {project.category}
                 </span>
               </div>
 
-              {/* Información y CTA */}
-              <div className="p-6 flex-grow flex flex-col justify-between space-y-6">
-                <div className="space-y-3">
-                  <h3 className="font-heading text-xl font-black text-white uppercase tracking-tight group-hover:text-[#99E2FF] transition-colors">
+              {/* Información y Acción */}
+              <div className="p-5 flex-grow flex flex-col justify-between space-y-5">
+                <div className="space-y-2">
+                  <h3 className="font-heading text-lg font-black text-white uppercase tracking-tight group-hover:text-[#00F0FF] transition-colors leading-snug">
                     {project.title}
                   </h3>
-                  <p className="text-xs text-neutral-400 leading-relaxed">
+                  <p className="text-xs text-slate-300 leading-relaxed">
                     {project.description}
                   </p>
                 </div>
 
-                {/* Etiquetas de Tecnología */}
-                <div className="flex flex-wrap gap-2 pt-2">
+                {/* Tags de Tecnología */}
+                <div className="flex flex-wrap gap-1.5">
                   {project.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="text-[10px] font-mono bg-[#0A2733]/60 text-[#99E2FF] px-2.5 py-1 rounded-md border border-[#52A9CC]/30"
+                      className="text-[9px] font-mono bg-slate-950 text-slate-300 px-2 py-0.5 rounded-md border border-white/10"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                {/* Indicador visual de acción */}
-                <div className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#004966] via-[#52A9CC] to-[#99E2FF] text-black font-tech font-black py-3.5 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-[#0A2733]/60 group-active:scale-95">
-                  <span>Probar Demo en Vivo</span>
-                  <ExternalLink className="w-4 h-4" />
+                {/* Botón Acción [Ver Demo en Vivo] */}
+                <div className="w-full inline-flex items-center justify-center gap-2 bg-[#00F0FF] group-hover:bg-cyan-300 text-slate-950 font-tech font-black py-3 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_0_15px_rgba(0,240,255,0.3)] group-active:scale-95">
+                  <span>Ver Demo en Vivo</span>
+                  <ExternalLink className="w-3.5 h-3.5 stroke-[2.5]" />
                 </div>
               </div>
             </a>
